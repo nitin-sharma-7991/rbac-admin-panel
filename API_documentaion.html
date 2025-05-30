@@ -1,0 +1,270 @@
+<h1>📘 rbac<em>admin</em>panel</h1>
+
+<h1>🚀 Get started here</h1>
+
+<p>This template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.</p>
+
+<h2>🔖 <strong>How to use this template</strong></h2>
+
+<h4><strong>Step 1: Send requests</strong></h4>
+
+<p>RESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.</p>
+
+<p>This collection contains each of these <a href="https://learning.postman.com/docs/sending-requests/requests/">request</a> types. Open each request and click "Send" to see what happens.</p>
+
+<h4><strong>Step 2: View responses</strong></h4>
+
+<p>Observe the response tab for status code (200 OK), response time, and size.</p>
+
+<h4><strong>Step 3: Send new Body data</strong></h4>
+
+<p>Update or add new data in "Body" in the POST request. Typically, Body data is also used in PUT request.</p>
+
+<p>```
+{
+    "name": "Add your name in the body"
+}</p>
+
+<p>```</p>
+
+<h4><strong>Step 4: Update the variable</strong></h4>
+
+<p>Variables enable you to store and reuse values in Postman. We have created a <a href="https://learning.postman.com/docs/sending-requests/variables/">variable</a> called <code>base_url</code> with the sample request <a href="https://postman-api-learner.glitch.me">https://postman-api-learner.glitch.me</a>. Replace it with your API endpoint to customize this collection.</p>
+
+<h4><strong>Step 5: Add tests in the "Scripts" tab</strong></h4>
+
+<p>Adding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the "Test Results" tab.</p>
+
+<p><img src="https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n" alt="" height="1530" width="2162"></p>
+
+<h2>💪 Pro tips</h2>
+
+<ul>
+<li><p>Use folders to group related requests and organize the collection.</p></li>
+<li><p>Add more <a href="https://learning.postman.com/docs/writing-scripts/intro-to-scripts/">scripts</a> to verify if the API works as expected and execute workflows.</p></li>
+</ul>
+
+<h2>💡Related templates</h2>
+
+<p><a href="https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719">API testing basics</a><br />
+<a href="https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719">API documentation</a><br />
+<a href="https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719">Authorization methods</a></p>
+
+<h2>List All Roles</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles</code></p></li>
+<li><p><strong>Description:</strong> This is a GET request and it is used to "get" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have <code>id=1</code>).</p></li>
+</ul>
+
+<p>A successful GET response will have a <code>200 OK</code> status, and should include some kind of response body - for example, HTML web content or JSON data.</p>
+
+<h2>Register User</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/auth/register</code></p></li>
+<li><p><strong>Description:</strong> This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.</p></li>
+</ul>
+
+<p>A successful POST request typically returns a <code>200 OK</code> or <code>201 Created</code> response code.</p>
+
+<h3>Body:</h3>
+
+<p>```json
+{
+  "name": "john",
+  "email": "john@gmail.com",
+  "password": "12345678"
+}</p>
+
+<p>```</p>
+
+<h2>Update data</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>PUT</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/info?id=1</code></p></li>
+<li><p><strong>Description:</strong> This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. <code>id=1</code>).</p></li>
+</ul>
+
+<p>A successful PUT request typically returns a <code>200 OK</code>, <code>201 Created</code>, or <code>204 No Content</code> response code.</p>
+
+<h3>Body:</h3>
+
+<p><code>json
+{
+    "name": "Add your name in the body"
+}
+</code></p>
+
+<h2>Delete Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>DELETE</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles/3</code></p></li>
+<li><p><strong>Description:</strong> This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. <code>id=1</code>).</p></li>
+</ul>
+
+<p>A successful DELETE request typically returns a <code>200 OK</code>, <code>202 Accepted</code>, or <code>204 No Content</code> response code.</p>
+
+<h2>Login User</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/auth/login</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p><code>json
+{
+  "email": "john@gmail.com",
+  "password": "12345678"
+}
+</code></p>
+
+<h2>Logout User</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/auth/logout</code></p></li>
+</ul>
+
+<h2>Create Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles</code></p></li>
+</ul>
+
+<h2>Get Single Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles/1</code></p></li>
+</ul>
+
+<h2>Update Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> ``</p></li>
+</ul>
+
+<h2>Assign Permissions to Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles/1/permissions</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p><code>json
+{
+  "permissions": [1,2]
+}
+</code></p>
+
+<h2>Get Permissions of Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/roles/2/permissions</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p>```json
+{
+  "permissions": [1]
+}</p>
+
+<p>```</p>
+
+<h2>List All Permissions</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/permissions</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p>```json
+{
+  "permissions": [1]
+}</p>
+
+<p>```</p>
+
+<h2>Create Permission</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/permissions</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p>```json
+{
+  "name": "edit-posts",
+  "description": "permision for edit the post."
+}</p>
+
+<p>```</p>
+
+<h2>Get Single Permission</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/permissions/3</code></p></li>
+</ul>
+
+<h2>Update Permission</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>PUT</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/permissions/3</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p>```json
+{
+  "name": "update-users"
+}</p>
+
+<p>```</p>
+
+<h2>Delete Permission</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>DELETE</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/permissions/3</code></p></li>
+</ul>
+
+<h2>Admin-only Endpoint</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>GET</code></p></li>
+<li><p><strong>URL:</strong> ``</p></li>
+</ul>
+
+<h2>Assign User to Role</h2>
+
+<ul>
+<li><p><strong>Method:</strong> <code>POST</code></p></li>
+<li><p><strong>URL:</strong> <code>{{base_url}}/users/1/roles</code></p></li>
+</ul>
+
+<h3>Body:</h3>
+
+<p><code>json
+{
+  "role": "Admin"
+}
+</code></p>
